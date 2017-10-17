@@ -1,0 +1,117 @@
+i {
+  cursor: pointer;
+  padding: .5rem;
+  margin: auto;
+  font-size: 2rem;
+  width: 4rem;
+}
+
+td,
+th {
+  text-align: center;
+}
+
+label {
+  display: block;
+  text-align: left;
+}
+
+.internPrograms {
+  color: #03A9F4;
+}
+.internProgramsCount {
+  color: #A5D6A7;
+}
+.internRemove {
+  color: #e57373;
+}
+.gradeEdit {
+  color: #FFB300
+}
+
+.counter {
+  position: relative;
+  color: #ef9a9a;
+  top: -.3rem;
+  left: .6rem;
+  z-index: 3;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+tr {
+   -webkit-transition: opacity 2.0s ease-in;
+       -moz-transition: opacity 2.0s ease-in;
+         -o-transition: opacity 2.0s ease-in;
+                                  opacity: 1;
+}
+
+.alert {
+  color: white;
+  -webkit-transition: all 2.0s ease-in;
+       -moz-transition: all 2.0s ease-in;
+         -o-transition: all 2.0s ease-in;
+                                  opacity: 1;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.fixed {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  left: 0;
+  transform: translateY(-50%);
+  margin: auto;
+  z-index: 4;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: .6s
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.dialog {
+  color: white;
+  background: #0277BD;
+  border: none;
+  border-radius: .4rem;
+  padding: 5rem;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, .2)
+}
+
+/* Using the previous lab, add the following
+
+    Add a column to put the number of programs the user has, just a number, or "-" if empty
+    
+    User name should be an a tag, when clicked it should open a panel under the table with the user details: id, name and programs, programs its a list with the grade: e.g.
+        Java 80 - Remove
+        JavaScript 90 - Remove
+        
+    User can add or remove programs to each user
+    
+    Click on add program button will show a popup where they can select the program and add the grade, grade must be numeric 0 - 100, programs must be from a set list of programs hardcoded, input must be a filteringselect with a store
+    
+    Clicking on the program name will display a pop-up to change the grade
+    
+    Pop-up button should be add or save
+    
+    Code must have a clear separation of view (html), model (intern, program) and controller (app logic, views updates) */

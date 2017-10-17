@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://ui.oreillyauto.com/ui/css/oreillybs-3.3.5r2.min.css">
+  <link rel="stylesheet" href="https://ui.oreillyauto.com/ui/css/oreillybs-dojo-r13.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <title>JS LABS- Interns App </title>
+
+</head>
+<body>
+  <div class="container">
+      <h1 class="underline">INTERNS APP<span class="halftopmargin small pull-right">User Information</span></h1>
+    <div class="row well">
+        <h2 class="col-xs-12">Add New Intern</h2>
+        <form class="col-xs-12" id="userForm">
+        <div id="error" class="col-xs-12 alert alert-danger halftopmargin hide"></div>
+          <table class="col-xs-12 col-md-5">
+            <tr>
+              <td>
+                 <div class="form-group">
+                   <label class="form-label">Name</label>
+                   <input type="text" id="name" class="form-control"
+                          data-dojo-type="dijit/form/ValidationTextBox" 
+                          data-dojo-props="regExp:'[\\w]+', required: true" required/>
+                 </div>
+              <td class="col-xs-1">
+                <input id="addBtn" type="submit" class="btn btn-primary pull-right halftopmargin" value="Add" 
+                       data-dojo-type="oreilly/types/form/Button" 
+                       data-dojo-props="spinOnClick: false">
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      
+      <div class="row">
+        <h2 class="col-xs-12">Interns</h2>
+        <table id="interns" class="col-xs-12 table table-striped table-condensed">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Programs Completed</th>
+                  <th>&nbsp;</th>
+              </tr>
+          </thead>
+        </table>
+  
+      <!-- Dialog -->
+      <div id="dialog" class="container hide fade-in">
+        <div class="row">
+          <div class="dialog form-group col-xs-8 col-xs-offset-2">
+            <form id="dialogForm" class="form form-group">
+              <h1>Add Completed Program</h1>
+              <label class="form-label halftopmargin" for="selectWithDropdown">Program</label>
+              <select id="programSelect" data-dojo-type="dijit/form/Select" name="selectWithDropDown" class="form-control">
+                <option value="null" selected=selected disabled>Select Program</option>
+                <option value="Objects and Promises">Objects and Promises</option>
+                <option value="Modules and AMD">Modules and AMD</option>
+                <option value="Dojo, Dom, Events">Dojo, Dom, Events</option>
+                <option value="Ajax and Widgets">Ajax and Widgets</option>
+                <option value="Ajax and Widgets">Final Test</option>
+              </select>
+              <label class="form-label halftopmargin" for="grade">Grade</label>
+              <input type="number" id="grade" class="form-control" max="100"
+                     data-dojo-type="dijit/form/ValidationTextBox" 
+                     data-dojo-props="regExp:'[\\w]+', required: true" required/>
+              <input id="dialogSubmit" type="submit" class="btn btn-primary halftopmargin pull-right" value="Add Program" 
+                     data-dojo-type="oreilly/types/form/Button" 
+                     data-dojo-props="spinOnClick: false">
+            </form>
+          </div>
+         <div id="dialogError" class="col-xs-8 col-xs-offset-2 alert alert-danger halftopmargin hide"></div>
+      </div>
+     </div>
+    </div>
+
+     <!-- Edit Dialog -->
+     <div id="dialogEdit" class="container hide fade-in">
+      <div class="row">
+        <div class="dialog form-group col-xs-8 col-xs-offset-2">
+          <form id="dialogEditForm" class="form form-group">
+            <div id="programEditName"></div>
+            <label class="form-label halftopmargin" for="selectWithDropdown"></label>
+            <div id="programEdit"></div>
+            <label class="form-label halftopmargin" for="grade">Grade</label>
+            <input type="number" id="gradeEditInput" class="form-control" max="100"
+                   data-dojo-type="dijit/form/ValidationTextBox" 
+                   data-dojo-props="regExp:'[\\w]+', required: true" required/>
+            <input id="dialogEditSubmit" type="submit" class="btn btn-primary halftopmargin pull-right" value="Save" 
+                   data-dojo-type="oreilly/types/form/Button" 
+                   data-dojo-props="spinOnClick: false">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script data-dojo-config="async: 1" src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
