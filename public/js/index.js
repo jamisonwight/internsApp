@@ -1,3 +1,26 @@
+var socket = io.connect('http://localhost')
+var userCount = ''
+let status = document.getElementById('status')
+let connected = document.getElementById('connected')
+let disconnected = document.getElementById('disconnected')
+
+socket.on('onConnect', (data) => {
+  status.innerHTML = `<h1>Interns Online: ${data.userCount}</h1>`
+  connected.classList.remove('hide')
+  setTimeout(() => {
+    connected.classList.add('hide')
+  }, 4500)
+})
+
+socket.on('onDisconnect', (data) => {
+  status.innerHTML = `<h1>Interns Online: ${data.userCount}</h2>`
+  disconnected.classList.remove('hide')
+  setTimeout(() => {
+    disconnected.classList.add('hide')
+  }, 4500)
+})
+
+
 // Week 1 Group Lab
 // Interns class object
 define('Interns', ['dojo/dom', 'dojo/dom-construct', 'dojo/query', 'dojo/_base/declare'], (dom, domConstruct, query, declare) => {
@@ -192,7 +215,6 @@ define('Interns', ['dojo/dom', 'dojo/dom-construct', 'dojo/query', 'dojo/_base/d
     },
     editInternGrade: (gradeId, gradeVal) => {
       let _grade = document.getElementById('grade-' + gradeId)
-      console.log(this.grades)
       let _getGrade = this.grades.find(item => {
         return item.id === gradeId
       })
@@ -305,11 +327,11 @@ require(['dojo/dom', 'dojo/on', 'Interns', 'utilities'], (dom, on, interns, util
                   internsApp.editInternGrade(id, gradeEditInput.value)
                   gradeEditInput.form.reset()
                   dialogEdit.classList.replace('fixed', 'hide')
-                }, {useCapture: true, once: true})
+                }, {once: true})
               },)
             }
-          }, {useCapture: true, once: true})
-        }, {useCapture: true})
+          }, {once: true})
+        })
       }
     })
 

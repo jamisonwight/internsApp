@@ -11,6 +11,27 @@ th {
   text-align: center;
 }
 
+.underline {
+  font-family: "Pacifico" !important;
+  font-size: 4rem;
+  padding-bottom: 4rem;
+}
+
+.well {
+  margin-top: 5rem;
+}
+
+input,
+input[type="submit"],
+input[type="text"],
+input[type="number"],
+select {
+  border: none !important;
+  padding: 1rem 3rem !important;
+  height: 4.5rem !important;
+}
+
+
 label {
   display: block;
   text-align: left;
@@ -89,6 +110,30 @@ tr {
 	}
 }
 
+.fade-in-out {
+	opacity: 0;
+	animation-name: fadeInOut;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 4s
+}
+
+@keyframes fadeInOut {
+	0% {
+		opacity: 0;
+	}
+	30% {
+		opacity: 1;
+	}
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
 .dialog {
   color: white;
   background: #0277BD;
@@ -96,6 +141,40 @@ tr {
   border-radius: .4rem;
   padding: 5rem;
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, .2)
+}
+
+
+.status-block {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 0;
+  padding: .2rem 2rem;
+  background: #e57373;
+  border-radius: .4rem;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, .2);
+  color: #ffffff;
+  margin: auto;
+  z-index: 6;
+}
+
+.status-block h1,
+.status-notification h1 {
+  padding: 1rem;
+  line-height: 2.5rem;
+}
+
+.status-notification {
+  width: 22rem;
+  position: fixed;
+  right: 1.4rem;
+  bottom: 8rem;
+  padding: .2rem 2rem;
+  background: #ecf0f1;
+  border-radius: .4rem;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, .2);
+  color: #e57373;
+  margin: auto;
+  z-index: 6;
 }
 
 /* Using the previous lab, add the following
