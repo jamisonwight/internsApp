@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://ui.oreillyauto.com/ui/css/oreillybs-dojo-r13.min.css">
   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato|Nunito" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/public/css/main.css">
 
   <title>JS LABS- Interns App </title>
   <script src="/socket.io/socket.io.js"></script>
@@ -21,20 +21,22 @@
   <div id="disconnected" class="status-notification fade-in-out hide"><h1>An Intern just disconnected</h1></div>
 
   <div class="container halftopmargin">
-      <h1 class="underline">Intern App</h1>
+   <a class="pull-right" href="/logout"><b>Logout</b></a>
+      <h1 class="underline">Interny</h1>
     <div class="row well">
-        <h2 class="col-xs-12">Add New Intern</h2>
+
+    <% if (user.local.isAdmin) { %>
+      <h2 class="col-xs-12">Hello, <%= user.local.first_name + ' ' + user.local.last_name %> (Admin)</h2>
+    <% }  else { %>
+        <h2 class="col-xs-12">Hello, <%= user.local.first_name + ' ' + user.local.last_name %></h2>
+    <% } %>
+
         <form class="col-xs-12" id="userForm" method="post" action="#">
         <div id="error" class="col-xs-12 alert alert-danger halftopmargin hide"></div>
           <table class="col-xs-12 col-md-5">
             <tr>
-              <td>
-                 <div class="form-group">
-                   <label class="form-label">Name</label>
-                   <input type="text" id="name" class="form-control" name="firstName" required/>
-                 </div>
               <td class="col-xs-1">
-                <input id="addBtn" type="submit" class="btn btn-primary pull-right halftopmargin" value="Add">
+                <input id="addBtn" type="submit" class="btn btn-primary pull-left halftopmargin" value="Start New Program">
               </td>
             </tr>
           </table>
@@ -102,6 +104,6 @@
       </div>
     </div>
   </div>
-  <script src="dist/index.js"></script>
+  <script src="/public/dist/index.js"></script>
 </body>
 </html>

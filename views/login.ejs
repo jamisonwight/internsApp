@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Intern Login</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://ui.oreillyauto.com/ui/css/oreillybs-3.3.5r2.min.css">
+    <link rel="stylesheet" href="https://ui.oreillyauto.com/ui/css/oreillybs-dojo-r13.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/main.css">
+
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  
+  <body>
+    <div class="container halftopmargin">
+      <h1 class="underline">Interny</h1>
+      <div class="row fixed col-xs-4 col-xs-offset-4 box-grey">
+        <h1>Login</h1>
+        
+          <% if (message.length > 0) { %>
+            <div class="alert alert-danger"><%= message %></div>
+          <% } %>
+
+          <form action="/login" method="post">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" name="email" placeholder="Email Address"/>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" placeholder="Password"/>
+            </div>
+            <button type="submit" class="btn-blue">Login</button>
+          </form>
+          <div class="register-link halftopmargin">
+            <span>Not registered? Register <a href="/register"><b>here.</b></a></span>
+          </div>
+      </div>
+    </div>
+    <script src="/public/dist/index.js"></script>
+  </body>
+</html>

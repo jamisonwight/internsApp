@@ -1,3 +1,27 @@
+p,
+h3,
+a,
+button,
+table,
+.connected,
+.disconnected,
+.status, {
+  font-family: "Nunito" !important;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+body {
+  background: rgba(238,238,238, 1);
+}
+
+.well,
+td {
+  border: none !important;
+}
+
 i {
   cursor: pointer;
   padding: .5rem;
@@ -9,26 +33,58 @@ i {
 td,
 th {
   text-align: center;
+  color: #ef9a9a;
+}
+
+.panel,
+.panel td,
+.panel th {
+  color: #2c7fc7; 
 }
 
 .underline {
   font-family: "Pacifico" !important;
   font-size: 4rem;
   padding-bottom: 4rem;
+  color: #2c7fc7;
 }
 
 .well {
   margin-top: 5rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2)
 }
+
 
 input,
 input[type="submit"],
 input[type="text"],
 input[type="number"],
+.btn-blue,
 select {
   border: none !important;
   padding: 1rem 3rem !important;
   height: 4.5rem !important;
+}
+
+.btn-blue {
+  background: #2c7fc7 !important;
+  color: #ef9a9a;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: .4rem;
+}
+
+form h1 {
+  font-size: 3.5rem;
+  padding-bottom: 2rem;
+}
+
+form h2 {
+  padding-top: 2rem;
+}
+
+form h3 {
+  font-size: 1.5rem;
 }
 
 
@@ -43,7 +99,8 @@ label {
 .internProgramsCount {
   color: #A5D6A7;
 }
-.internRemove {
+.internRemove,
+.programRemove {
   color: #e57373;
 }
 .gradeEdit {
@@ -73,6 +130,46 @@ tr {
        -moz-transition: all 2.0s ease-in;
          -o-transition: all 2.0s ease-in;
                                   opacity: 1;
+}
+
+.box-blue {
+  background: #0277BD;
+  color: #ffffff;
+  padding: 5rem;
+  border-radius: .4rem;
+  box-shadow: 2px 2px 3px 2px rgba(2,119,189, 1)
+}
+
+.box-grey {
+  width: 60rem;
+  background: rgba(238,238,238, 1);
+  color: #ef9a9a;
+  padding: 5rem;
+  border-radius: .4rem;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1)
+}
+
+.box-grey form {
+  padding-top: 1rem;
+}
+
+.box-grey h1 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.register-link {
+  padding-top: 1rem;
+}
+
+.login {
+  text-align: center;
+}
+.login span{
+  font-size: 2.5rem;
+}
+.login a {
+  margin-top: 1.5rem;
 }
 
 .hide {
@@ -164,10 +261,9 @@ tr {
 }
 
 .status-notification {
-  width: 22rem;
   position: fixed;
-  right: 1.4rem;
-  bottom: 8rem;
+  left: 1.4rem;
+  bottom: 2rem;
   padding: .2rem 2rem;
   background: #ecf0f1;
   border-radius: .4rem;
